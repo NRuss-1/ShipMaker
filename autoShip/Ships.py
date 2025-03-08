@@ -7,7 +7,18 @@ class Ship:
         self.dps = dps
         self.speed = speed
 
-def getShips():
+def read_ships():
+    '''
+    Plan:
+        1. Read File line by line with each line representing a new ship to add 
+        2. 
+    '''
+    pass 
+
+    
+
+
+def setShips(pango = 0, ares = 0, hind = 0):
     ships = []
     ships.append(Ship("Starling", 2, 2, 3800, 780, 8))
     ships.append(Ship("Pelican", 3, 6, 5000, 510, 6))
@@ -19,7 +30,7 @@ def getShips():
     ships.append(Ship("Hook", 3, 11, 10000, 1020, 8))
     ships.append(Ship("Mercury", 3, 13, 17500, 900, 2))
     ships.append(Ship("Poseidon", 3, 14, 18000, 1020, 2))
-    ships.append(Ship("Binglehopper", 3, 18, 25000, 960, 1))
+    ships.append(Ship("Binglehopper", 3, 18, 24000, 960, 1))
     ships.append(Ship("Weasel", 4, 8, 8000, 1350, 8))
     ships.append(Ship("Pheasant", 4, 8, 8000, 1350, 9))
     ships.append(Ship("Marauder", 4, 8, 6500, 1350, 10))
@@ -31,10 +42,10 @@ def getShips():
     ships.append(Ship("Ibis", 4, 12, 10500, 1530, 10))
     ships.append(Ship("Corsair", 4, 12, 10000, 1350, 10))
     ships.append(Ship("Falchion", 4, 13, 13000, 1350, 8))
-    ships.append(Ship("Grouse", 4, 13, 20000, 1530, 7))
+    ships.append(Ship("Grouse", 4, 13, 16000, 1530, 7))
     ships.append(Ship("Fox", 4, 15, 10000, 1530, 7))
     ships.append(Ship("Albatross", 4, 15, 15000, 1350, 8))
-    ships.append(Ship("Ceres", 4, 18, 24000, 1230, 1))
+    #ships.append(Ship("Ceres", 4, 18, 24000, 1230, 1))
     ships.append(Ship("Goose", 5, 8, 12000, 1800, 6))
     ships.append(Ship("Manta", 5, 8, 8800, 1530, 8))
     ships.append(Ship("Orca", 5, 10, 9200, 2040, 8))
@@ -43,7 +54,7 @@ def getShips():
     ships.append(Ship("Tyrant", 5, 12, 10500, 2040, 10))
     ships.append(Ship("Otter", 5, 12, 12500, 1800, 10))
     ships.append(Ship("Phoenix", 5, 14, 15500, 1800, 9))
-    ships.append(Ship("Neptune", 5, 17, 25000, 2330, 1))
+    ships.append(Ship("Neptune", 5, 17, 24000, 2330, 1))
     ships.append(Ship("Mongoose", 6, 14, 17500, 2250, 6))
     ships.append(Ship("Mastiff", 6, 14, 19500, 2250, 6))
     ships.append(Ship("Mule", 6, 16, 20500, 2250, 6))
@@ -60,10 +71,13 @@ def getShips():
     ships.append(Ship("Alliance", 9, 18, 23000, 3600, 6))
     ships.append(Ship("Pigeon", 10, 20, 22000, 4350, 6))
     ships.append(Ship("Covenant", 10, 22, 25000, 4050, 6))
-    ships.append(Ship("Hind", 11, 26, 28000, 5700, 6))
+    if hind == 1:
+        ships.append(Ship("Hind", 11, 26, 28000, 5700, 6))
     ships.append(Ship("Poseidon w/ sails", 3, 15, 18000, 1020, 2))
-    ships.append(Ship("Ares", 4, 28, 28000, 3060, 4))
+    if ares == 1:
+        ships.append(Ship("Ares", 4, 28, 28000, 3060, 4))
     ships.append(Ship("Brigand Elite", 8, 16, 16000, 3150, 8))
     ships.append(Ship("Raider", 8, 12, 8000, 780, 10))
-    ships.append(Ship("Pangolin", 9, 18, 25000, 3600, 6))
+    if pango == 1:
+        ships.append(Ship("Pangolin", 9, 18, 25000, 3600, 6))
     return ships
