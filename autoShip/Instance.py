@@ -1,11 +1,27 @@
-
+import Ships
 
 class InstanceData:
+    _instance = None
+
     def __init__(self):
-        self.page = 1
-        self.all_combs = []
-        self.num_people = 0
-        self.CP = 0
+        if InstanceData._instance:
+            raise Exception("Class is singleton")   
+        else:
+            self.page = 1
+            self.all_combs = []
+            self.num_people = 0
+            self.CP = 0
+            self.ships = []
+            self.delimeter = []
+        
+    @staticmethod
+    def getInstance():
+        if not InstanceData._instance:
+           InstanceData._instance = InstanceData()
+        return InstanceData._instance
+
+    def setShips(self, pango=0, ares=0, hind=0):
+        self.ships = Ships.setShips(pango, ares, hind)
 
     def initPage(self):
         self.page = 1
@@ -17,7 +33,7 @@ class InstanceData:
         self.page -= 30
     
     def initCombArr(self):
-        self.all_combs = []
+        self.all_combs = [] 
     
     def comb_append(self, comp):
         self.all_combs.append(comp)
@@ -32,6 +48,7 @@ class InstanceData:
         cp = 40 * (self.num_people/15)
         self.CP = cp
     
-    def getInstance(self):
-        return self
-    
+    def setDelim(self, delim):
+        delim = delim.replace(" ", "")
+        delim = delim.split(",")
+        self.delimeter = delim
